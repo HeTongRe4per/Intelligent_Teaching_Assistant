@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>GPathGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>其他Groovy</id>
+          </State>
+          <State>
+            <id>可能引起混淆的代码结构Groovy</id>
+          </State>
+          <State>
+            <id>可能的错误Groovy</id>
+          </State>
+          <State>
+            <id>命名惯例Groovy</id>
+          </State>
+          <State>
+            <id>声明冗余Groovy</id>
+          </State>
+          <State>
+            <id>控制流问题Groovy</id>
+          </State>
+          <State>
+            <id>数据流Groovy</id>
+          </State>
+          <State>
+            <id>方法指标Groovy</id>
+          </State>
+          <State>
+            <id>有效性问题Groovy</id>
+          </State>
+          <State>
+            <id>样式Groovy</id>
+          </State>
+          <State>
+            <id>模块化问题Java</id>
+          </State>
+          <State>
+            <id>注解Groovy</id>
+          </State>
+          <State>
+            <id>线程问题Groovy</id>
+          </State>
+          <State>
+            <id>赋值问题Groovy</id>
+          </State>
+          <State>
+            <id>错误处理Groovy</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Ali-Check</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
