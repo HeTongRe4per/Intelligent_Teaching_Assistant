@@ -4,9 +4,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://115.190.86.22:10086/exam_manage
-    username: HeTong
-    password: zl08250901@YL
+    url: jdbc:mysql://***:***/exam_manage
+    username: ***
+    password: ***
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -34,9 +34,9 @@ mybatis-plus:
       table-underline: true
     banner: false
 
-uploadPath: H:/Intelligent_Teaching_Assistant_Resource/
+uploadPath: ***
 
 deepseek:
-  api-key: sk-44552729da4f4c429c04d2514da409c7
+  api-key: ***
   api-url: https://api.deepseek.com/v1/chat/completions
 
