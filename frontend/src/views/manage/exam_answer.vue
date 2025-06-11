@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref, watch} from "vue";
+import {onMounted, onUnmounted, ref, watch} from "vue";
 import useCrudActions from "@/hooks/useCrudActions.ts";
 import router from "@/router";
 import request from "@/utils/request.ts";
@@ -109,7 +109,8 @@ const handleSubmit = () => {
     });
     let postData: any = {
       id: currentData.value.id,
-      answers: answer
+      answers: answer,
+      switchCount: localSwitchCount/2
     };
     if (questionTableData.value.every((item: any) => item.type === 1)) {
       postData.score = score;
@@ -119,6 +120,8 @@ const handleSubmit = () => {
     }
     request.post("/manage/studentExam/edit", postData).then(() => {
       ElMessage.success("提交成功");
+      localSwitchCount = 0;
+      localStorage.removeItem('switchCount');
       router.push({ path: '/manage/my_exam' });
     });
   }).catch(() => {});
@@ -144,6 +147,25 @@ const handleCheck = () => {
     router.push({ path: '/manage/my_exam' });
   });
 };
+
+let localSwitchCount = 0;
+let switchScreenHandler: () => void;
+
+onMounted(() => {
+  // 初始化本地切屏计数
+  const stored = localStorage.getItem('switchCount');
+  localSwitchCount = stored ? parseInt(stored) : 0;
+
+  switchScreenHandler = () => {
+    localSwitchCount += 1;
+    localStorage.setItem('switchCount', localSwitchCount.toString());
+  };
+  window.addEventListener("visibilitychange", switchScreenHandler);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("visibilitychange", switchScreenHandler);
+});
 </script>
 
 <style scoped>

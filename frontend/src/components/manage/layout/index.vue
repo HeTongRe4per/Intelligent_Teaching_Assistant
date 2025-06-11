@@ -13,7 +13,13 @@
         <el-backtop target=".el-main"></el-backtop>
       </el-container>
     </el-container>
-    <el-button class="back-top-btn" type="danger" circle @click="router.push({path: '/manage/ai-chat'})">
+    <el-button
+      v-if="!isExamPage"
+      class="back-top-btn"
+      type="danger"
+      circle
+      @click="router.push({path: '/manage/ai-chat'})"
+    >
       <el-icon :size="45"><ChatLineRound /></el-icon>
     </el-button>
   </div>
@@ -25,6 +31,11 @@ import AsideMenu from "@/components/manage/layout/asideMenu.vue";
 import MainHeader from "@/components/manage/layout/mainHeader.vue";
 import MainContent from "@/components/manage/layout/mainContent.vue";
 import router from "@/router";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+
+const route = useRoute();
+const isExamPage = computed(() => route.path.startsWith("/manage/answer/"));
 </script>
 
 <style scoped>

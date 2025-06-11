@@ -310,7 +310,13 @@ const handlePublish = (record: any) => {
     postData.append("examId", record.id);
     postData.append("studentIds", data.records.map((item: any) => item.studentId).join(","));
     request.post("/manage/studentExam/batchAdd", postData).then(() => {
-      ElMessage.success("发布成功");
+      request.post("/manage/exam/edit", {
+        id: record.id,
+        state: 1
+      }).then(() => {
+        ElMessage.success("发布成功");
+        handleList();
+      });
     })
   });
 };

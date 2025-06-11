@@ -31,6 +31,8 @@
             </el-table-column>
             <el-table-column prop="score" label="考试成绩" align="center">
             </el-table-column>
+            <el-table-column prop="switchCount" label="切屏次数" align="center" >
+            </el-table-column>
             <el-table-column prop="startTime" label="开始时间" align="center">
             </el-table-column>
             <el-table-column prop="endTime" label="结束时间" align="center">
@@ -183,6 +185,12 @@ const recordMetas = [
   {
     name: "score",
     title: "考试成绩",
+    dataType: "Integer",
+    selectable: false,
+  },
+  {
+    name: "switchCount",
+    title: "切屏次数",
     dataType: "Integer",
     selectable: false,
   },

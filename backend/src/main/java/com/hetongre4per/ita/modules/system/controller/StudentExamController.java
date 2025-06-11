@@ -102,5 +102,15 @@ public class StudentExamController extends BaseController {
         boolean removed = studentExamService.removeBatchByIds(Arrays.asList(ids.split(",")));
         return removed ? Result.success("删除成功") : Result.error("删除失败");
     }
+
+    @ApiOperation(value = "学生考试切屏计数")
+    @PostMapping("/switchScreen")
+    public Result<?> switchScreen(@RequestParam Integer id) {
+        StudentExam exam = studentExamService.getById(id);
+        if (exam == null) return Result.error("未找到考试记录");
+        exam.setSwitchCount(exam.getSwitchCount() == null ? 1 : exam.getSwitchCount() + 1);
+        studentExamService.updateById(exam);
+        return Result.success("计数加一");
+    }
     
 }

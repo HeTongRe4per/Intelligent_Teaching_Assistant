@@ -29,5 +29,5 @@ public class StudentExamDTO {
 
     private Date updatedTime;
 
-    
+    private Integer switchCount;
 }

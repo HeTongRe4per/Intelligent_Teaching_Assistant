@@ -46,6 +46,8 @@ public class StudentExam  {
     @TableField("updated_time")
     private Date updatedTime;
 
+    @TableField("switch_count")
+    private Integer switchCount;
 
     @Getter
     @AllArgsConstructor(access = AccessLevel.PUBLIC)
